@@ -1,0 +1,14 @@
+table, thead, tbody, tr, th, td, important {
+    color: white !important;
+}
+
+
+/* Material UI classname
+TableHead, TableHead Arrow, Number of Pagination , down arrow Pagination */
+.MuiButtonBase-root,
+.MuiSvgIcon-root,
+.css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon,
+.MuiTablePagination-select
+ {
+    color: white !important;
+}

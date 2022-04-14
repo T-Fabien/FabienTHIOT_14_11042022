@@ -1,0 +1,55 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+}
+
+.address {
+    margin-top: 10px;
+}
+
+/* My CSS */
+
+body{
+    background-color: #363940;
+}
+
+a,p,h1,h2,label,legend {
+    color: #fdffff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* Btn */
+
+.btn__container{
+    display: flex;
+    margin-top: 20px;
+}
+
+.btn{
+    background-color: #93ad18;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    width: 200px;
+}
