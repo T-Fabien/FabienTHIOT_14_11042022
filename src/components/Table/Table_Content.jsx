@@ -13,20 +13,6 @@ import EmployeeTableHead from "./Table_Head";
 import { SearchBar } from "../Searchbar";
 
 // Const
-const employees = JSON.parse(localStorage.getItem("employees")) || [];
-const employeesDefaultList = employees.map((employee) => {
-  return {
-    firstName: employee.firstName,
-    lastName: employee.lastName,
-    birthdate: employee.birthdate,
-    department: employee.department,
-    startDate: employee.startDate,
-    street: employee.street,
-    city: employee.city,
-    state: employee.state,
-    zipCode: employee.zipCode,
-  };
-});
 const dayjs = require("dayjs");
 
 // Sorted Employees by the Sort Direction
@@ -48,6 +34,20 @@ const getComparator = (order, orderBy) => {
 };
 
 export default function EmployeeTableContent() {
+  const employees = JSON.parse(localStorage.getItem("employees")) || [];
+  const employeesDefaultList = employees.map((employee) => {
+    return {
+      firstName: employee.firstName,
+      lastName: employee.lastName,
+      birthdate: employee.birthdate,
+      department: employee.department,
+      startDate: employee.startDate,
+      street: employee.street,
+      city: employee.city,
+      state: employee.state,
+      zipCode: employee.zipCode,
+    };
+  });
   // States
   const [orderDirection, setOrderDirection] = useState("asc");
   const [valueToOrderBy, setValueToOrderBy] = useState("firstName");
@@ -78,9 +78,9 @@ export default function EmployeeTableContent() {
       return [
         row.firstName,
         row.lastName,
-        row.birthdate,
+        dayjs(row.birthdate).format("DD/MM/YYYY"),
         row.department,
-        row.startDate,
+        dayjs(row.startDate).format("DD/MM/YYYY"),
         row.street,
         row.city,
         row.state,
@@ -88,7 +88,7 @@ export default function EmployeeTableContent() {
       ].some((text) => {
         const [formattedText, formattedSearch] = [
           text.trim().toLowerCase(),
-          searchedVal.trim().toLowerCase()
+          searchedVal.trim().toLowerCase(),
         ];
 
         return formattedText.includes(formattedSearch);
@@ -102,7 +102,7 @@ export default function EmployeeTableContent() {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - employees.length) : 0;
 
   return (
-    <>
+    <div className="main__list">
       <SearchBar requestSearch={requestSearch} />
       <TableContainer>
         <Table>
@@ -123,12 +123,10 @@ export default function EmployeeTableContent() {
                     </TableCell>
                     <TableCell>{employee.lastName}</TableCell>
                     <TableCell>
-                      {" "}
                       {dayjs(employee.birthdate).format("DD/MM/YYYY")}
                     </TableCell>
                     <TableCell>{employee.department}</TableCell>
                     <TableCell>
-                      {" "}
                       {dayjs(employee.startDate).format("DD/MM/YYYY")}
                     </TableCell>
                     <TableCell>{employee.street}</TableCell>
@@ -155,6 +153,6 @@ export default function EmployeeTableContent() {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
-    </>
+    </div>
   );
 }

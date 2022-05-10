@@ -1,55 +1,114 @@
 .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 label {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 10px;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 10px;
 }
 
 .address {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 /* My CSS */
 
-body{
-    background-color: #363940;
+/* Global */
+
+#test{
+  display: none;
+  margin-top: -400px;
 }
 
-a,p,h1,h2,label,legend {
-    color: #fdffff;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+body {
+  background-color: #363940;
+}
+
+#root{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main__employee{
+  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+label,
+input,
+legend {
+  color: #fdffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Section */
+.form__title{
+    margin: 30px 0 0 0;
+    font-size: 24px;
+    font-weight: 0;
+}
+
+.form__section {
+  display: flex;
+}
+
+/* Form Field */
+
+.form__field {
+  margin: 0 15px;
+}
+
+.form__field label {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.form__field input,
+.form__field select {
+  color: #38393b;
+  font-size: 1em;
+  border-radius: 10px;
+  background-color: #f1f4f8;
+  padding: 8px 10px;
+  border: none;
 }
 
 /* Btn */
 
-.btn__container{
-    display: flex;
-    margin-top: 20px;
+.btn__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
-.btn{
-    background-color: #93ad18;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-size: 22px;
-    font-weight: 500;
-    margin-top: 10px;
-    padding: 12px 24px;
-    text-align: center;
-    text-decoration: none;
-    width: 200px;
+.btn__container button {
+  background-color: #6b7e0f;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 10px;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
 }

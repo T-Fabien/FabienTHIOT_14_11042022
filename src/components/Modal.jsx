@@ -1,14 +1,12 @@
 import React from "react";
 
-import logo from "../asset/wealth_health_logo.jpg"
-
-export default function Modal (modalProps) {
-    const { setModalIsOpen } = modalProps;
+export default function Modal (props) {
+    const { setModalIsOpen } = props;
   return (
     <div className="modal">
-        <img src={logo} alt=""/>
-        <h2>Sucess !</h2>
-        <p>The new employee has been created</p>
+        <img src={props.img} alt=""/>
+        <h2>{props.title}</h2>
+        <p>{props.text}</p>
         <button onClick={() => setModalIsOpen(false)}>Close</button>
     </div>
   );

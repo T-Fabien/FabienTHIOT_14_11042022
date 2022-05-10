@@ -12,3 +12,52 @@ TableHead, TableHead Arrow, Number of Pagination , down arrow Pagination */
  {
     color: white !important;
 }
+.MuiTableContainer-root{
+    margin-top: 30px;
+}
+
+
+.css-1q1u3t4-MuiTableRow-root.MuiTableRow-hover:hover {
+    background-color: rgba(0, 0, 0, 0.4)!important;
+}
+
+/* Pagination */
+.MuiMenuItem-gutters {
+    color: black !important;
+}
+
+.css-10by3a5-MuiButtonBase-root-MuiMenuItem-root-MuiTablePagination-menuItem:hover{
+    background-color: #6b7e0f !important;
+}
+
+/* Global */
+
+.main__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* SearchBar */
+
+.searchbar{
+    display: flex;
+    margin: 0 auto;
+    width: 400px;
+}
+
+.searchbar input{
+    background-color: #f1f4f8;
+    border: none;
+    border-radius: 10px;
+    color: #38393b;
+    font-size: 1em;
+    padding: 8px 30px 8px 10px;
+    width: 220px;
+}
+
+.searchbar svg{
+    width: 20px;
+    margin-left: -26px;
+}

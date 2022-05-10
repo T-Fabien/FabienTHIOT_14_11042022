@@ -10,7 +10,10 @@ import FormSelectInput from "./Form/Form_Select";
 import FormLabelInput from "./Form/Form_Input";
 import FormDataPicker from "./Form/Form_DataPicker";
 
-import Modal from "./Modal";
+import modal_img from "../asset/wealth_health_logo.jpg";
+
+/* import Modal from "./Modal"; */
+import { Modal } from "p14_modal";
 
 export default function EmployeeForm() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -37,6 +40,7 @@ export default function EmployeeForm() {
     }));
   };
 
+  // Sumbit the Form
   const Submit = (event) => {
     event.preventDefault();
     setModalIsOpen(true);
@@ -45,62 +49,101 @@ export default function EmployeeForm() {
   };
 
   return (
-    <div>
+    <div className="main__employee">
       <form
         name="employee_form"
         action="#"
         id="create-employee"
         onSubmit={Submit}
       >
-        <FormLabelInput
-          for="firstName"
-          label="First Name"
-          onChange={handleChange}
-        />
-        <FormLabelInput
-          for="lastName"
-          label="Last Name"
-          onChange={handleChange}
-        />
-        <FormDataPicker
-          for="birthdate"
-          label="Date of Birth"
-          onChange={handleChange}
-        />
-        <FormDataPicker
-          for="startDate"
-          label="Start Date"
-          onChange={handleChange}
-        />
-
-        <fieldset className="address">
-          <legend>Address</legend>
-          <FormLabelInput for="street" label="Street" onChange={handleChange} />
-          <FormLabelInput for="city" label="City" onChange={handleChange} />
+        <h3 className="form__title">Basic Info</h3>
+        <div className="form__section basic__info">
+          <FormLabelInput
+            type="text"
+            for="firstName"
+            label="First Name"
+            placeholder="Enter the firstname"
+            onChange={handleChange}
+          />
+          <FormLabelInput
+            type="text"
+            for="lastName"
+            label="Last Name"
+            placeholder="Enter the lastname"
+            onChange={handleChange}
+          />
+          <FormDataPicker
+            for="birthdate"
+            label="Date of Birth"
+            placeholder="Select date"
+            onChange={handleChange}
+          />
+        </div>
+        <h3 className="form__title">Adress Info</h3>
+        <div className="form__section adress_info">
+          <FormLabelInput
+            type="text"
+            for="street"
+            label="Street"
+            placeholder="Enter the street"
+            onChange={handleChange}
+          />
+          <FormLabelInput
+            type="text"
+            for="city"
+            label="City"
+            placeholder="Enter the city"
+            onChange={handleChange}
+          />
           <FormSelectInput
             for="state"
             label="State"
             list={states}
+            placeholder="Select the state"
             onChange={handleChange}
           />
           <FormLabelInput
+            type="number"
             for="zipCode"
             label="Zip Code"
+            placeholder="Enter the zip code"
             onChange={handleChange}
           />
-        </fieldset>
+        </div>
 
-        <FormSelectInput
-          for="department"
-          label="Department"
-          list={departement}
-          onChange={handleChange}
-        />
+        <h3 className="form__title">Departement Info</h3>
+        <div className="form__section adress_info">
+          <FormSelectInput
+            for="department"
+            label="Department"
+            list={departement}
+            placeholder="Select the departement"
+            onChange={handleChange}
+          />
+
+          <FormDataPicker
+            for="startDate"
+            label="Start Date"
+            placeholder="Select date"
+            onChange={handleChange}
+          />
+        </div>
         <div className="btn__container">
           <button type="submit">Save</button>
         </div>
       </form>
-      <div>{modalIsOpen && <Modal setModalIsOpen={setModalIsOpen} />}</div>
+      <div>
+        {modalIsOpen && (
+          <Modal
+            show={modalIsOpen}
+            setShow={setModalIsOpen}
+            title="Success !"
+            text="The new employee has been created"
+            image={modal_img}
+            btn="Retour"
+          />
+        )}
+      </div>
     </div>
   );
 }

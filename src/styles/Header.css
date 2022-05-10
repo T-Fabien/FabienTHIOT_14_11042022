@@ -1,0 +1,35 @@
+.header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header h1{
+    font-size: 38px;
+    margin: 0;
+}
+
+.header h2{
+    font-size: 32px;
+    margin: 0;
+}
+
+.header a{
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: 0;
+}
+
+.header .active{
+    color: #93ad18;
+    font-weight: 600;
+}
+
+.header .link:hover{
+    color: #93ad18;
+    filter: brightness(75%);
+}
+
+.header__links a:nth-child(1){
+    margin-right: 20px;
+}
