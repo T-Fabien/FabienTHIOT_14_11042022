@@ -33,3 +33,55 @@
 .header__links a:nth-child(1){
     margin-right: 20px;
 }
+
+/* Média Queries */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .header h1{
+      font-size: 32px;
+    }
+  
+    .header h2{
+      font-size: 28px;
+    }
+  
+    .header a{
+      font-size: 22px;
+    }
+} 
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .header h1{
+      font-size: 20px;
+    }
+  
+    .header h2{
+      font-size: 18px;
+    }
+  
+    .header a{
+      font-size: 16px;
+    }
+
+    .header__links a:nth-child(1) {
+        margin-right: 5px;
+    }
+}  
+
+@media screen and (max-width: 425px) {
+    .header h1{
+      font-size: 24px;
+    }
+  
+    .header h2{
+      display: none;
+    }
+  
+    .header a{
+      font-size: 14px;
+    }
+
+    .header__links a:nth-child(1) {
+        margin-right: 5px;
+    }
+}  
