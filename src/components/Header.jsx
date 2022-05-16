@@ -22,7 +22,7 @@ export default function Header(props) {
         <h2>{props.page}</h2>
       </div>
       <div className="header__links">
-        <NavLink to="/" end className="link">
+        <NavLink to="/FabienTHIOT_14_11042022" end className="link">
           Create Page
         </NavLink>
         <NavLink to="/employee-list" end className="link">

@@ -15,8 +15,6 @@ import './styles/Employee_List.css';
 import './styles/Create_Employee.css';
 
 
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

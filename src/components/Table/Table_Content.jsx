@@ -37,13 +37,13 @@ export default function EmployeeTableContent() {
   const employees = JSON.parse(localStorage.getItem("employees")) || [];
   const employeesDefaultList = employees.map((employee) => {
     return {
-      firstName: employee.firstName,
-      lastName: employee.lastName,
+      firstName: employee.firstName[0].toUpperCase() + employee.firstName.slice(1).toLowerCase(),
+      lastName: employee.lastName[0].toUpperCase() + employee.lastName.slice(1).toLowerCase(),
       birthdate: employee.birthdate,
-      department: employee.department,
+      department: employee.department[0].toUpperCase() + employee.department.slice(1).toLowerCase(),
       startDate: employee.startDate,
-      street: employee.street,
-      city: employee.city,
+      street: employee.street[0].toUpperCase() + employee.street.slice(1).toLowerCase(),
+      city: employee.city[0].toUpperCase() + employee.city.slice(1).toLowerCase(),
       state: employee.state,
       zipCode: employee.zipCode,
     };
